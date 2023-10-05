@@ -209,6 +209,14 @@ def update_approve_status_view(request,pk):
         stock.unit=stock.unit-unit
         stock.save()
         req.status="Approved"
+        # donor = get_object_or_404(models.Patient, id=req.donor.id)
+        # subject = 'Your Request has been Approved'
+        # message = f'Hello {donor.user},\n\nYour request for blood has been approved.  Thank you for your using our platform !\n\n\nBest regards,\nBlood Relation Team'
+        # sender_email = 'blood.relation101@gmail.com'
+        # recipient_email = donor.email
+
+        # send_mail(subject, message, sender_email, [recipient_email])
+        # messages.success(request, f'Email sent to {donor.user} at {recipient_email}.')
         
     else:
         message="Stock Doest Not Have Enough Blood To Approve This Request, Only "+str(stock.unit)+" Unit Available"
@@ -255,7 +263,7 @@ def approve_donation_view(request, pk):
 
         # Sending an email to the donor
         subject = 'Your Request has been Approved'
-        message = f'Hello {donor.user},\n\nYour request for {donation.unit} units of blood donation has been approved. Thank you for your contribution!\n\nBest regards,\n Blood Relation Team'
+        message = f'Hello {donor.user},\n\nYour request for {donation.unit} units of blood donation has been approved. Thank you for your contribution!\n\nBest regards,\nBlood Relation Team'
         sender_email = 'blood.relation101@gmail.com'
         recipient_email = donor.email
 
@@ -274,6 +282,14 @@ def approve_donation_view(request, pk):
 def reject_donation_view(request,pk):
     donation=dmodels.BloodDonate.objects.get(id=pk)
     donation.status='Rejected'
+    donor = get_object_or_404(dmodels.Donor, id=donation.donor.id)
+    subject = 'Your Request has been Rejected'
+    message = f'Hello {donor.user},\n\nYour request for blood donation has been rejected. Thank you for your interest !\n Please try after 7 Days \n\nBest regards,\nBlood Relation Team'
+    sender_email = 'blood.relation101@gmail.com'
+    recipient_email = donor.email
+
+    send_mail(subject, message, sender_email, [recipient_email])
+    messages.success(request, f'Email sent to {donor.user} at {recipient_email}.')
     donation.save()
     return HttpResponseRedirect('/admin-donation')
 
