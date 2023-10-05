@@ -1,0 +1,338 @@
+{% load static %}
+<html>
+
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+  <style>
+    .home{
+<!--    width:100%;-->
+
+
+<!--    border:10px solid red;-->
+
+}
+   .slider {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  /* margin-top: 200px; */
+  margin-bottom:50px;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+<!--  object-fit: cover;-->
+  transition: transform 0.5s ease;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.prev-btn,
+.next-btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  /* color: #fff; */
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+.count-box {
+    background-color: #dc3545; /* Background color for the box */
+    color: #fff; /* Text color for the box */
+    padding: 24px;
+    padding-bottom: 18px;
+    padding-top: 14px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 29px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+}
+
+.count {
+    font-size: 40px;
+    font-weight: bold;
+    animation: count-up 2s ease-in-out;
+}
+
+@keyframes count-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+     /* Slideshow Styles */
+
+.poster-slideshow {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    padding-bottom: 45px;
+}
+::-webkit-scrollbar {
+            width: 20px;
+
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 1px;
+            background: red;
+
+        }
+        :before::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 1px;
+            background: red;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: white;
+            border-radius: 1px;
+            height:5px;
+        }
+        ::-webkit-scrollbar-track-piece{
+            margin: 2px;
+        }
+  </style>
+</head>
+  <body>
+  <div class="home">
+  {% include "blood/navbar.html" %}
+
+
+
+
+     <div class="slider">
+        <img src="https://www.kokilabenhospital.com/blog/wp-content/uploads/2023/06/World-Blood-Donor-Day-Blog-.jpg" alt="Image 1">
+        <img src="/static/image/sl3.jpg" alt="Image 2">
+        <img src="https://images.alphacoders.com/565/565095.jpg" alt="Image 3">
+        <img src="https://t4.ftcdn.net/jpg/04/84/01/39/360_F_484013979_Wc1K5p0q5qHEIF68T8dnWuEh6SVvdWk9.jpg" alt="Image 3">
+
+        <div class="slider-controls">
+          <button class="prev-btn"><span style="font-size: 25px; color: orange;">&#8810</span></button>
+          <button class="next-btn"><span style="font-size: 25px;  color: orange;">&#8811</span></button>
+        </div>
+      </div>
+
+
+<div class="row" style="padding-top:4px; ">
+        <div class="row text-center">
+          <div class="col-md-12 typeHeading" style="width:80%; margin:auto">
+            <h1 class="learnAbout" style=" text-align:center; width:80%; margin:auto;
+           background-image:url('./static/image/blood-drop3.png'),url('./static/image/blood-drop3.png');
+           background-repeat: no-repeat,no-repeat;
+           background-position:0 0.1em, right 0.1em;">Learn About Donation</h1>
+              <br>
+          </div>
+
+        <br><br>
+        <div class="wow col-sm-6 rotateInDownRight text-center animated" data-wow-delay="0ms" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 0ms; animation-name: rotateInDownRight;">
+
+          <picture>
+            <source srcset="/static/image/donationFact.webp" type="image/webp">
+            <source srcset="/static/image/donationFact.jpg" type="image/jpeg">
+            <img src="/static/image/donationFact.jpg" alt="One Donation Can save upto three lives">
+          </picture>
+          <blockquote>
+            <p style="font-family:oswald; color:#212529; font-weight:500; font-size:17.5px; border:border-box;">After donating blood, the body works to replenish the blood loss. This
+              stimulates the production of new blood cells and in turn, helps in maintaining good health.
+            </p><p>
+          </p></blockquote>
+
+          <button onclick="/donor/donorlogin" class="btn btn-danger svcNearBy hvr-sweep-to-right "><i class="fa fa-tint" aria-hidden="true"></i>&nbsp; Donate Now</button>
+          <br><br>
+        </div>
+
+
+        <div class="col-sm-6" align="center" style="font-size: 1.5rem;">
+          <table class="table table-responsive  ">
+            <tbody>
+              <tr>
+                <th colspan="3" style="color:white;background-color:red;">Compatible Blood Type Donors</th>
+              </tr>
+              <tr>
+                <td><b>Blood Type</b></td>
+                <td><b>Donate Blood To</b></td>
+                <td><b>Receive Blood From</b></td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>A+</b></span></td>
+                <td>A+ AB+</td>
+                <td>A+ A- O+ O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>O+</b></span></td>
+                <td>O+ A+ B+ AB+</td>
+                <td>O+ O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>B+</b></span></td>
+                <td>B+ AB+</td>
+                <td>B+ B- O+ O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>AB+</b></span></td>
+                <td>AB+</td>
+                <td>Everyone</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>A-</b></span></td>
+                <td>A+ A- AB+ AB-</td>
+                <td>A- O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>O-</b></span></td>
+                <td>Everyone</td>
+                <td>O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>B-</b></span></td>
+                <td>B+ B- AB+ AB-</td>
+                <td>B- O-</td>
+              </tr>
+              <tr>
+                <td><span style="color: #961e1b;"><b>AB-</b></span></td>
+                <td>AB+ AB-</td>
+                <td>AB- A- B- O-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div></div>
+
+
+<div class="row" style="padding: 0 10%; margin:auto; background-image:url(https://wallpaperaccess.com/full/4982.jpg)">
+    <div class="col-md-4">
+        <div class="count-box">
+            <h3>Donors Registered</h3>
+              <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target=1500>0</p>
+<!--              <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{totaldonors}}>0</p>-->
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="count-box bg-success">
+            <h3>Total BloodBank Registered </h3>
+<!--            <p class="count" data-target={{totalbloodunit}}>6,915,963</p>-->
+             <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target=3840>3840</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="count-box bg-warning">
+            <h3>Blood Units Collected</h3>
+<!--            <p class="count" data-target={{totalbloodunit}}>6,915,963</p>-->
+             <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target=6915963>6,915,963</p>
+        </div>
+    </div>
+
+</div>
+
+<br><br>
+    <div style="width:85%; margin:auto;">
+          <h1 style=" text-align:center; width:90%;
+           background-image:url('./static/image/blood-drop3.png'),url('./static/image/blood-drop3.png');
+           background-repeat: no-repeat,no-repeat;
+           background-position:0 0.1em, right 0.1em;">Why we have to Donate Blood</h1>
+
+          <br>
+          <ul style="font-size:20px; font-style:bold; list-style-image:url('./static/image/arr.png')">
+              <li>Every year our nation requires about 5 Crore units of blood, out of which only a meager 2.5 Crore units of blood are available.</li>
+              <li>The gift of blood is the gift of life. There is no substitute for human blood.</li>
+              <li>Every two seconds someone needs blood.</li>
+              <li>More than 38,000 blood donations are needed every day.</li>
+              <li>A total of 30 million blood components are transfused each year.</li>
+              <li>The average red blood cell transfusion is approximately 3 pints.</li>
+              <li>The blood type most often requested by hospitals is Type O.</li>
+              <li>Sickle cell patients can require frequent blood transfusions throughout their lives.</li>
+              <li>More than 1 million new people are diagnosed with cancer each year. Many of them will need blood, sometimes daily, during their chemotherapy treatment.</li>
+              <li>A single car accident victim can require as many as 100 units of blood</li>
+          </ul>
+      </div>
+
+
+
+
+
+  {% include "blood/footer.html" %}
+     </div>
+</body>
+<script>
+let slideIndex = 1;
+const images = document.querySelectorAll('.slider img');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+function showSlide(n) {
+  if (n < 1) {
+    slideIndex = images.length;
+  } else if (n > images.length) {
+    slideIndex = 1;
+  }
+
+  for (let i = 0; i < images.length; i++) {
+    images[i].style.display = 'none';
+  }
+  images[slideIndex - 1].style.display = 'block';
+}
+function prevSlide() {
+  showSlide(slideIndex -= 1);
+}
+function nextSlide() {
+  showSlide(slideIndex += 1);
+}
+setInterval(() => {
+  showSlide(slideIndex += 1);
+}, 1800);
+
+prevBtn.addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+
+showSlide(slideIndex);
+
+
+function startCounting() {
+  const counters = document.querySelectorAll('.count');
+
+  counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      let count = 0;
+      const increment = target / 100;
+
+      const updateCounter = () => {
+          count += increment;
+          if (count < target) {
+              counter.textContent = Math.ceil(count);
+              requestAnimationFrame(updateCounter);
+          } else {
+              counter.textContent = target;
+          }
+      };
+
+      updateCounter();
+  });
+}
+window.addEventListener('load', startCounting);
+
+
+</script>
+</html>

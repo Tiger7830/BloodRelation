@@ -1,0 +1,209 @@
+{% extends 'blood/adminbase.html' %}
+{% block content %}
+<br><br>
+
+<style>
+    .count{
+    font-size:35px;
+    font-style:strong;
+    font-weight:600;
+    }
+</style>
+<div class="container">
+<br><br><br><br>
+    <div class="row">
+        <div class="col-sm-3">
+          <div class="card bg-light"  style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.2); border-radius:15px;">
+            <div class="card-body">
+                <div class="blood">
+                    <h2 style="text-shadow: 3px 2px 3px rgba(0,0,0,0.6);" >A+ <i class="fas fa-tint"></i></h2>
+                </div><br><br>
+                <div class="count-box">
+                    <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{A1.unit}}>0</p>
+                </div>                            
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.2);border-radius:15px;">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>B+ <i class="fas fa-tint"></i></h2>
+                    </div><br><br>
+                    <div class="count-box">
+                      <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{B1.unit}}>0</p>
+                    </div>                            
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.2);border-radius:15px;">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>O+ <i class="fas fa-tint"></i></h2>
+                    </div><br><br>
+                    <div class="count-box">
+                      <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{O1.unit}}>0</p>
+                    </div>                            
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card bg-light" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.2); border-radius:15px;">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>AB+ <i class="fas fa-tint"></i></h2>
+                    </div><br><br>
+                    <div class="count-box">
+                      <p class="count"  style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{AB1.unit}}>0</p>
+                    </div>                            
+                </div>
+              </div>
+          </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="card bg-light" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.2);border-radius:15px;">
+            <div class="card-body">
+                <div class="blood">
+                    <h2>A- <i class="fas fa-tint"></i></h2>
+                </div><br><br>
+                <div class="count-box">
+                  <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{A2.unit}}>0</p>
+                </div>                            
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.2);border-radius:15px;">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>B- <i class="fas fa-tint"></i></h2>
+                    </div><br><br>
+                    <div class="count-box">
+                      <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{B2.unit}}>0</p>
+                    </div>                            
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.2);border-radius:15px;">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>O- <i class="fas fa-tint"></i></h2>
+                    </div><br><br>
+                    <div class="count-box">
+                     <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{O2.unit}}>0</p>
+                    </div>                            
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card bg-light" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.2);border-radius:15px;">
+                <div class="card-body">
+                    <div class="blood">
+                        <h2>AB- <i class="fas fa-tint"></i></h2>
+                    </div><br><br>
+                    <div class="count-box">
+                      <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{AB2.unit}}>0</p>
+                    </div>                            
+                </div>
+              </div>
+          </div>
+      </div>
+<hr>
+
+
+
+<!--      total and   request counting  ////////////////////////////////////////////////////////////////////       /////////////////////////////////////-->
+
+
+    <div class="row">
+      <div class="col-sm-3"  >
+        <div class="card bg-warning" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.5);border-radius:15px;">
+          <div class="card-body">
+              <div class="blood">
+                  <i class="fas fa-users"></i>
+              </div><br>
+              <div class="count-box">
+                  Total Donors <br>
+               <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target={{totaldonors}}>0</p>
+              </div>                            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+          <div class="card bg-info" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.6);border-radius:15px;">
+              <div class="card-body">
+                  <div class="blood ">
+                      <i class="fas fa-spinner"></i>
+                  </div><br>
+                  <div class="count-box">
+                      Total Requests <br>
+                    <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target= {{totalrequest}} >0</p>
+                  </div>
+              </div>
+            </div>
+      </div>
+      <div class="col-sm-3">
+          <div class="card bg-primary" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.6);border-radius:15px;">
+              <div class="card-body">
+                  <div class="blood">
+                      <i class="far fa-check-circle"></i>
+                  </div><br>
+                  <div class="count-box">
+                      Approved Requests <br>
+                    <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.4);" data-target= {{totalapprovedrequest}} >0</p>
+                  </div>
+<!--                  <div>-->
+<!--                      Approved Requests <br>-->
+<!--                      {{totalapprovedrequest}}-->
+<!--                  </div>                            -->
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card bg-success" style=" box-shadow: 10px 10px 5px rgba(0,0,0,0.4);border-radius:15px;">
+              <div class="card-body">
+                  <div class="blood">
+                      <i class="fas fa-tint xyz"></i>
+                  </div><br>
+                  <div class="count-box">
+                      Total Blood Unit (in ml) <br>
+                  <p class="count" style="text-shadow: 2px 3px 6px rgba(0,0,0,0.8);" data-target= {{totalbloodunit}}>0</p>
+                  </div>                            
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function startCounting() {
+  const counters = document.querySelectorAll('.count');
+
+  counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      let count = 0;
+      const increment = target / 100;
+
+      const updateCounter = () => {
+          count += increment;
+          if (count < target) {
+              counter.textContent = Math.ceil(count);
+              requestAnimationFrame(updateCounter);
+          } else {
+              counter.textContent = target;
+          }
+      };
+
+      updateCounter();
+  });
+}
+window.addEventListener('load', startCounting);
+
+</script>
+
+
+{% endblock content %}

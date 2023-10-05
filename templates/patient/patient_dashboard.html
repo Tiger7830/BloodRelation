@@ -1,0 +1,81 @@
+{% extends 'patient/patientbase.html' %}
+{% block content %}
+<head>
+    <style>
+            .xyz{     
+        color: blue; 
+        font-size: 3ex;   
+    }
+<!--        background-image:url(/static/image/faltu.png);-->
+<!--         background-size:100% 30%;-->
+
+    </style>
+</head>
+<br><br>
+<div class="container">
+<br><br><br>
+ 
+    <div class="row">
+      <div class="col-sm-3" >
+        <div class="card bg-light"  >
+          <div class="card-body" style="background-color:#bb8bb3" >
+              <div class="blood" >
+                <i class="fas fa-sync-alt xyz"></i>
+              </div><br>
+              <div>
+                Request Made <br>
+                  {{requestmade}}
+              </div>                            
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card bg-light">
+            <div class="card-body" style="background-color:#ffd6ad">
+                <div class="blood">
+                  <i class="fas fa-sync xyz"></i>
+                </div><br>
+                <div>
+                    Pending Request <br>
+                    {{requestpending}}
+                </div>                            
+            </div>
+          </div>
+      </div>
+
+      <div class="col-sm-3">
+          <div class="card bg-light">
+              <div class="card-body" style="background-color:#dae087">
+                  <div class="blood">
+                    <i class="fas fa-check-circle xyz"></i>
+                  </div><br>
+                  <div>
+                       Approved Request<br>
+                      {{requestapproved}}
+                  </div>                            
+              </div>
+            </div>
+      </div>
+      <div class="col-sm-3">
+          <div class="card bg-light">
+              <div class="card-body" style="background-color:#fb586b">
+                  <div class="blood">
+                    <i class="fas fa-times-circle xyz"></i>
+                  </div><br>
+                  <div>
+                       Rejected Request <br>
+                      {{requestrejected}}
+                  </div>                            
+              </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--<div style="width:100%; height:720px; margin-top:-200px background-size:100% 120%; background-image:url(https://png.pngtree.com/thumb_back/fh260/background/20220217/pngtree-creative-simple-background-design-of-world-blood-donation-day-image_953566.jpg)">-->
+
+</div>
+
+{% endblock content %}

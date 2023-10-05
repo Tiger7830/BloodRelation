@@ -1,0 +1,39 @@
+
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+  {% load static %}
+
+  <body>
+{% include "blood/navbar.html" %}
+
+<br><br><br><br><br><br><br>
+    <div style="width:85%; margin:auto;">
+          <h1 style=" text-align:center; width:90%;
+           background-image:url('./static/image/blood-drop3.png'),url('./static/image/blood-drop3.png');
+           background-repeat: no-repeat,no-repeat;
+           background-position:0 0.1em, right 0.1em;">You Have Been Logged Out</h1>
+            <h6 style="text-align:center;font-size:25px;font-weight:400; margin-top:-30px">Thank you for using our website</h6>
+          <br>
+            <h3>Some Facts About Blood</h3>
+          <ul style="font-size:20px; font-style:bold; list-style-image:url('./static/image/arr.png')">
+              <li>Blood makes up about 7 percent of your body's weight</li>
+              <li>There are four types of transfusable products that can be derived from blood: red cells, platelets, plasma and cryoprecipitate. Typically, two or three of these are produced from a unit of donated whole blood – hence each donation can help save up to three lives.</li>
+              <li>Donors can give either whole blood or specific blood components only. The process of donating specific blood components – red cells, plasma or platelets – is called apheresis.</li>
+              <li>One transfusion dose of platelets can be obtained through one apheresis donation of platelets or by combining the platelets derived from five whole blood donations.</li>
+              <li>Donated platelets must be used within five days of collection..</li>
+              <li>Healthy bone marrow makes a constant supply of red cells, plasma and platelets. The body will replenish the elements given during a blood donation – some in a matter of hours and others in a matter of weeks</li>
+              <li>Blood cannot be manufactured – it can only come from generous donors.</li>
+              <li>Type O-negative blood (red cells) can be transfused to patients of all blood types. It is always in great demand and often in short supply..</li>
+              <li>Type AB-positive plasma can be transfused to patients of all other blood types. AB plasma is also usually in short supply..</li>
+<!--              <li>A single car accident victim can require as many as 100 units of blood</li>-->
+          </ul>
+      </div>
+  {% include "blood/footer.html" %}
+
+  </body>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</html>
