@@ -135,7 +135,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'blood.relation101@gmail.com' 
-EMAIL_HOST_PASSWORD = 'nktufrsvggcrnriu' # host email password required
+EMAIL_HOST_PASSWORD = 'zcltjosvqbjyqiyt' # host email password required
 # now sign in with your host gmail account in your browser
 # open following link and turn it ON
 # https://myaccount.google.com/lesssecureapps
